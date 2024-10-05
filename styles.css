@@ -6,16 +6,19 @@
 * {
     margin: 0;
     font-family: 'Avenir', sans-serif;
+    color: black;
 }
 
 
 body {
-
+    background-color: #f8f7ed;
 }
 
 nav {
     background-color: #f8f7ed;
-    height: 3.5rem;
+    height: 7vh;
+    border: .05rem solid #dbdad1;
+    min-height: 3.5rem;
 }
 
 a {
@@ -84,5 +87,108 @@ a {
     color: #8c1c22;
 }
 
+.gallery-block {
+    margin: 0;
+    margin-top: 3.5rem;
+    padding: 0;
+    height: 35rem;
+    width: 100%;
+    display: flex;
+    justify-content: column;
+    gap: 0px;
+    position: relative;
+}
+
+.gallery-item {
+    width: 16.67%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-item img {
+    transform: translateY(100%);
+    object-fit: cover;
+    clip-path: inset(20% 0 0 0);
+    transition: clip-path 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.gallery-item:hover img {
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
+}
+
+.gallery-item-invert {
+    width: 16.67%;
+    border: black 1px solid;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-item-invert img {
+    transform: translateY(-100%);
+    object-fit: cover;
+    clip-path: inset(0 0 30% 0);
+    transition: clip-path 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.main-scroll {
+    background-color: #8c1c22;
+    margin: 0;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    width: 100%;
+    height: 400vh;
+}
+
+.section {
+    scroll-snap-align: center;
+    padding: 10% 0;
+    width: 100%;
+    height: 40vh;
+    margin: 20vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    font-size: 2em;
+    border: black solid 1px;
+}
 
 
+.first-section {
+
+}
+
+.second-section {
+
+}
+
+.third-section {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: small;
+}
+
+.third-section div {
+    width: 30vh;
+}
+
+#third-section img {
+    object-fit: cover;
+}
+
+#third-section-middle img{
+    height: 100vh;
+    clip-path: inset(0 0 0 0);
+}
+
+#third-section-right-image-one {
+    clip-path: circle(40%);
+    height: 10vh;
+}
+#third-section-right-image-two {
+    height: 10vh;
+}
