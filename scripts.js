@@ -1,14 +1,16 @@
-const galleryItems = document.querySelectorAll('.gallery-item');
+console.log("start")
+  
+let lastScrollTop = 0;
+const navbar = document.getElementById("menu");
 
-galleryItem.addEventListener('mouseleave', function() {
-    console.log("Mouse left");
-    galleryItem.classList.remove('gallery-item');
-    galleryItem.classList.add('gallery-item-invert');
+window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop) {
+        navbar.style.transform = "translateY(-100%)";
+    } else {
+        navbar.style.transform = "translateY(0)";
+    }
+    
+    lastScrollTop = scrollTop;
 });
-  
-  galleryItem.addEventListener('mouseenter', function() {
-    console.log("Mouse entered");
-    galleryItem.classList.remove('gallery-item-invert');
-    galleryItem.classList.add('gallery-item');
-});
-  

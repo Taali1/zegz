@@ -7,6 +7,21 @@
     <script src="scripts.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zakład Stolarski ZEGZUŁA</title>
+    <script>
+        const galleryItems = document.querySelectorAll('.gallery-item')
+
+        galleryItem.addEventListener('mouseleave', function() {
+            console.log("Mouse left");
+            galleryItem.classList.remove('gallery-item');
+            galleryItem.classList.add('gallery-item-invert');
+        });
+        
+        galleryItem.addEventListener('mouseenter', function() {
+            console.log("Mouse entered");
+            galleryItem.classList.remove('gallery-item-invert');
+            galleryItem.classList.add('gallery-item');
+        });
+    </script>
 </head>
 <body>
     <nav class="menu" id="menu">
