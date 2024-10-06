@@ -158,19 +158,18 @@ a {
     justify-content: center;
     align-items: center;
     font-size: 2em;
-    border: 1px black solid;
     margin-top: 20vh;
 }
 
-
 .first-section {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     position: relative;
 }
 
-.first-section div {
-    width: 50vw;
+.first-section-left {
+    padding-left: 3vw;
+    width: 35vw;
 }
 
 .first-section img {
@@ -181,25 +180,27 @@ a {
 .first-section-right {
     display: flex;
     justify-content: flex-end;
+    width: 50vw;
+    padding: 0 3vw;
+    overflow: hidden;
+    height: 100%;
 }
 
 .first-section-image-one {
+    overflow: hidden;
     border-right: 1px solid black;
+    transform: translateX(20%);
+    transform: translateY(-10%);
 }
 
 .first-section-image-two {
+    overflow: hidden;
     border-right: 1px solid black;
+
 }
 
 .first-section-image-three {
-    
-}
-
-
-
-.first-section-right {
-    width: 50vw;
-    padding: 0 3vw;
+    overflow: hidden;
 }
 
 .second-section {
