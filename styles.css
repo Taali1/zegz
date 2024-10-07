@@ -183,25 +183,38 @@ a {
     width: 50vw;
     padding: 0 3vw;
     overflow: hidden;
-    height: 100%;
+    height: 75vh;
 }
 
 .first-section-image-one {
     overflow: hidden;
     border-right: 1px solid black;
-    transform: translateX(20%);
-    transform: translateY(-10%);
 }
+
+.first-section-image-one img {
+    transform: translate(40%, 50%);
+}
+
 
 .first-section-image-two {
     overflow: hidden;
     border-right: 1px solid black;
+    width: 12vw;
+}
 
+.first-section-image-two img {
+    transform: translate(-20%);
 }
 
 .first-section-image-three {
     overflow: hidden;
 }
+
+.first-section-image-three img {
+    height: 60%;
+    transform: translate(-40%, 50%);
+}
+
 
 .second-section {
     display: flex;
