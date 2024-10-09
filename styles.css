@@ -105,7 +105,7 @@ a {
 }
 
 .gallery-item {
-    width: 16.67%;
+    width: 25vw;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -115,6 +115,7 @@ a {
 .gallery-item img {
     transform: translateY(100%);
     object-fit: cover;
+    width: 25vw;
     clip-path: inset(20% 0 0 0);
     transition: clip-path 1s ease-in-out, transform 1s ease-in-out;
 }
@@ -125,7 +126,7 @@ a {
 }
 
 .gallery-item-invert {
-    width: 16.67%;
+    width: 25vw;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -137,10 +138,34 @@ a {
 }
 
 .gallery-item-invert img {
+    width: 25vw;
     transform: translateY(-100%);
     object-fit: cover;
     clip-path: inset(0 0 30% 0);
     transition: clip-path 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.gallery-thing span{
+    position: absolute;
+    z-index: 2;
+    align-self: flex-end;
+    margin: 0 0 5vh -10vw;
+    font-size: 1.5rem;
+    padding: .7rem;
+    transition: background-color .5s ease-in-out, border .5s ease-in-out;
+    width: 8vw;
+}
+
+.gallery-thing:hover span {
+    background-color: #f8f7ed;
+    border-radius: .15rem;
+}
+
+.span-border {
+    display: flex;
+    justify-content: center;
+    outline: #8c1c22 dashed .1rem;
+    padding: .5rem;
 }
 
 .main-scroll {
@@ -404,20 +429,19 @@ a {
     transition-delay: .5s;
 }
 
-
 .second-section .text-box h2 {
     transition: transform 1s ease-in-out;
-    transform: translateX(100vw);
+    transform: translateY(100vh);
 }
 
 .second-section .text-box .generic-btn {
     transition: transform 1s ease-in-out;
-    transform: translateX(100vw);
+    transform: translateY(100vh);
 }
 
 .second-section .text-box span {
     transition: transform 1s ease-in-out;
-    transform: translateX(100vw);
+    transform: translateY(100vh);
 }
 
 .second-section.in-view .text-box h2{
