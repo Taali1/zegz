@@ -12,7 +12,7 @@
 
 body {
     padding: 0;
-    background-color: #f8f7ed;
+    background-color: white;
 }
 
 nav {
@@ -140,7 +140,7 @@ a {
 }
 
 .main-scroll {
-    background-color: #f8f7ed;
+    background-color: white;
     margin: 0;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
@@ -159,6 +159,7 @@ a {
     align-items: center;
     font-size: 2em;
     margin-top: 20vh;
+    scroll-behavior: smooth;
 }
 
 .first-section {
@@ -188,22 +189,35 @@ a {
 
 .first-section-image-one {
     overflow: hidden;
+    border-right: 1px solid white;
+    transition: border-right 5s cubic-bezier(0, 0.75, 0.50, 1);
+}
+
+.first-section.in-view .first-section-image-one {
     border-right: 1px solid black;
 }
 
 .first-section-image-one img {
-    transform: translate(40%, 50%);
+    transform: translate(40%, 100vw);
+    transition: transform 1s cubic-bezier(0, 0.75, 0.50, 1), opacity 1s ease-in;
+    opacity: 0;
 }
-
 
 .first-section-image-two {
     overflow: hidden;
-    border-right: 1px solid black;
+    border-right: 1px solid white;
+    transition: border-right 5s cubic-bezier(0, 0.75, 0.50, 1);
     width: 12vw;
 }
 
+.first-section.in-view .first-section-image-two {
+    border-right: 1px solid black;
+}
+
 .first-section-image-two img {
-    transform: translate(-20%);
+    transform: translate(-20%, -100vw);
+    transition: transform 1s cubic-bezier(0, 0.75, 0.50, 1), opacity 1s ease-in;
+    opacity: 0;
 }
 
 .first-section-image-three {
@@ -212,9 +226,25 @@ a {
 
 .first-section-image-three img {
     height: 60%;
-    transform: translate(-40%, 50%);
+    transform: translate(-40%, 100vw);
+    transition: transform 1s cubic-bezier(0, 0.75, 0.50, 1), opacity 1s ease-in;
+    opacity: 0;
 }
 
+.first-section.in-view .first-section-image-one img {
+    transform: translate(40%, 50%);
+    opacity: 1;
+}
+
+.first-section.in-view .first-section-image-two img {
+    transform: translate(-20%, 20%);
+    opacity: 1;
+}
+
+.first-section.in-view .first-section-image-three img {
+    transform: translate(-40%, 50%);
+    opacity: 1;
+}
 
 .second-section {
     display: flex;
@@ -260,46 +290,50 @@ a {
     width: 30vw;
 }
 
-#third-section img {
+.third-section img {
     transition: all .5s ease-in-out;
 }
 
-#third-section-left {
+.third-section-left {
     margin-left: 3vw;
     margin-right: 10vw;
 }
 
 
-#third-section-middle {
+.third-section-middle {
     display: flex;
     justify-content: center;
 }
 
-#third-section-middle img{
+.third-section-middle img{
     border-radius: 12vw 12vw 0 0;
     margin: 10vh 0;
     height: 75vh;
     width: 23vw;
 }
 
-#third-section-right {
+.third-section-right {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-#third-section-right img{
+.third-section-right img{
     height: 10vw;
     width: 10vw;
 }
 
-#third-section-right-image-one {
+.third-section-right-image-one {
     clip-path: circle(40%);
+    transform: translateY(-100vh);
+    transition: transform 1s ease-in-out;
 }
 
-#third-section-right-image-two {
+.third-section-right-image-two {
     margin-top: 40vh;
+    transform: translateY(100vh);
+    transition: transform 1s ease-in-out;
 }
 
 .generic-btn {
@@ -326,4 +360,72 @@ a {
 
 .text-box h2 {
     margin-bottom: 1rem;
+    transition: transform 1s cubic-bezier(0, 0.78, 0.58, 1);
+}
+
+.first-section .text-box h2, .third-section .text-box h2 {
+    transition: transform 1s cubic-bezier(0, 0.78, 0.58, 1);
+    transform: translateX(-100vw);
+}
+
+.third-section .text-box .generic-btn, .first-section .text-box .generic-btn {
+    transition: transform 1s cubic-bezier(0, 0.78, 0.58, 1);
+    transform: translateX(-100vw);
+}
+
+.first-section .text-box span, .third-section .text-box span {
+    transition: transform 1s cubic-bezier(0, 0.78, 0.58, 1);
+    transform: translateX(-100vw);
+}
+
+.third-section.in-view .third-section-right-image-one {
+    transform: translate(0);
+}
+
+.third-section.in-view .third-section-right-image-two{
+    transform: translate(0);
+}
+
+.first-section.in-view .text-box h2, .third-section.in-view .text-box h2{
+    transform: translateX(0);
+}
+
+.first-section.in-view .text-box span, .third-section.in-view .text-box span{
+    transform: translateX(0);
+    transition-delay: .25s;
+}
+
+.first-section.in-view .text-box .generic-btn, .third-section.in-view .text-box .generic-btn{
+    transform: translateX(0);
+    transition-delay: .5s;
+}
+
+
+.second-section .text-box h2 {
+    transition: transform 1s ease-in-out;
+    transform: translateX(100vw);
+}
+
+.second-section .text-box .generic-btn {
+    transition: transform 1s ease-in-out;
+    transform: translateX(100vw);
+}
+
+.second-section .text-box span {
+    transition: transform 1s ease-in-out;
+    transform: translateX(100vw);
+}
+
+.second-section.in-view .text-box h2{
+    transform: translateX(0);
+}
+
+.second-section.in-view .text-box span{
+    transform: translateX(0);
+    transition-delay: .25s;
+}
+
+.second-section.in-view .text-box .generic-btn{
+    transform: translateX(0);
+    transition-delay: .5s;
 }
