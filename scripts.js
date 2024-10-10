@@ -1,23 +1,3 @@
-console.log("start")
-
-// gallery
-if (document.getElementById('gallery-block')) {
-  console.log('gallery')
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  console.log(galleryItems)
-
-  galleryItems.forEach(function(galleryItem) {
-      galleryItem.addEventListener('mouseleave', function() {
-          galleryItem.classList.remove('gallery-item');
-          galleryItem.classList.add('gallery-item-invert');
-      });
-
-      galleryItem.addEventListener('mouseenter', function() {
-          galleryItem.classList.remove('gallery-item-invert');
-          galleryItem.classList.add('gallery-item');
-      });
-  });
-}
 
 // index
 if (document.getElementById('main-scroll')) {
