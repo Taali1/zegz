@@ -516,10 +516,6 @@ a {
     transition: transform .5s ease-in-out;
 }
 
-.gallery-cube img:hover {
-    transform: scale(1.1);
-}
-
 #gallery-furnitures .gallery-cube{
     border-radius: 5px;
     cursor: pointer;
@@ -528,4 +524,19 @@ a {
 
 .furnitures-gallery-img-additional {
     display: none;
+}
+
+.declining-outline {
+    height: 100%;
+    border: solid black .3rem;
+    transition: transform .5s ease-in-out;
+    transform: scale(1.2);
+}
+
+.declining-outline:hover {
+    transform: scale(.8);
+}
+
+.declining-outline img:hover {
+    transform: scale(1);
 }
